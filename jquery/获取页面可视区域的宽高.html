@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取页面可视区域的宽高</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 10px solid red;
+            padding: 25px;
+            margin: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+
+</div>
+
+
+<script src="jquery.min.js"></script>
+<script>
+
+
+    $(function () {
+        // 获取页面可视区域的宽高
+        $(window).resize(function () {
+            console.log($(window).height());
+            console.log($(window).width());
+        });
+
+
+        console.log("------");
+        var $box = $(".box");
+        console.log($box.width()); // width
+        console.log($box.innerWidth()); // padding+width
+        console.log($box.outerWidth()); // padding+width+border
+        console.log($box.outerWidth(true)); // padding+width+border+margin
+
+
+    });
+
+
+</script>
+
+
+</body>
+</html>
